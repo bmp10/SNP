@@ -201,15 +201,20 @@ canvas.addEventListener("mousedown", function(e) {
     mousedown(e);
 })
 canvas.addEventListener("touchstart", function(e) {
-    mousex = e.touches[0].clientX;
-    mousey = e.touches[0].clientY;
+    if (mousex == undefined) {
+        mousex = e.touches[0].clientX
+        mousey = e.touches[0].clientY
+    } else {
+        mousex = undefined
+        mousey = undefined
+    }
 })
 
 canvas.addEventListener("mousemove", function(e) {
     mouseupdate(e);
 })
 
-canvas.addEventListener("touchend", function(e) {
+canvas.addEventListener("mouseup", function(e) {
     mousex = undefined;
     mousey = undefined;
 })
