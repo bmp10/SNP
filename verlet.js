@@ -206,7 +206,7 @@ canvas.addEventListener("touchstart", function(e) {
 canvas.addEventListener("mousemove", function(e) {
     mouseupdate(e);
 })
-canvas.addEventListener("touchstart", function(e) {
+canvas.addEventListener("touchmove", function(e) {
     mouseupdate(new MouseEvent({clientX: e.touches[0].clientX, clientY: e.touches[0].clientY}));
 })
 
