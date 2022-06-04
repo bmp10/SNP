@@ -200,14 +200,14 @@ canvas.addEventListener("mousedown", function(e) {
     mousedown(e);
 })
 canvas.addEventListener("touchstart", function(e) {
-    mousedown(e);
+    mousedown(new MouseEvent({clientX: e.touches[0].clientX, clientY: e.touches[0].clientY}));
 })
 
 canvas.addEventListener("mousemove", function(e) {
     mouseupdate(e);
 })
-canvas.addEventListener("touchmove", function(e) {
-    mouseupdate(e);
+canvas.addEventListener("touchstart", function(e) {
+    mouseupdate(new MouseEvent({clientX: e.touches[0].clientX, clientY: e.touches[0].clientY}));
 })
 
 canvas.addEventListener("mouseup", function(e) {
