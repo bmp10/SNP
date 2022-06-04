@@ -202,7 +202,7 @@ canvas.addEventListener("mousedown", function(e) {
     mousedown(e);
 })
 canvas.addEventListener("touchstart", function(e) {
-    mouseupdate(new MouseEvent({clientX: e.touches[0].pageX, clientY: e.touches[0].pageY}));
+    mousedown(new MouseEvent({clientX: e.touches[0].pageX, clientY: e.touches[0].pageY}));
 })
 
 canvas.addEventListener("mousemove", function(e) {
