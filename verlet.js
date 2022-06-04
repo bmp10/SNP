@@ -190,14 +190,14 @@ canvas.addEventListener("mousedown touchstart", function(e) {
     mousey = e.clientY - canvas.offsetTop;
 })
 
-canvas.addEventListener("mousemove touchend", function(e) {
+canvas.addEventListener("mousemove touchmove", function(e) {
     if (mousex != undefined) {
         mousex = e.clientX - canvas.offsetLeft;
         mousey = e.clientY - canvas.offsetTop;
     }
 })
 
-canvas.addEventListener("mouseup touchmove", function(e) {
+canvas.addEventListener("mouseup touchend", function(e) {
     mousex = undefined;
     mousey = undefined;
 })
