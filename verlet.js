@@ -207,9 +207,6 @@ canvas.addEventListener("touchstart", function(e) {
 canvas.addEventListener("mousemove", function(e) {
     mouseupdate(e);
 })
-canvas.addEventListener("touchmove", function(e) {
-    mouseupdate(new MouseEvent("mousemove", {clientX: e.touches[0].clientX, clientY: e.touches[0].clientY}));
-})
 
 canvas.addEventListener("mouseup", function(e) {
     mousex = undefined;
@@ -220,11 +217,6 @@ canvas.addEventListener("touchend", function(e) {
     mousex = undefined;
     mousey = undefined;
 })
-
-
-window.onscroll = function() {
-    window.scroll(0, 0);
-}
 
 
 setInterval(update, 10);
