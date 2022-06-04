@@ -201,13 +201,8 @@ canvas.addEventListener("mousedown", function(e) {
     mousedown(e);
 })
 canvas.addEventListener("touchstart", function(e) {
-    if (mousex == undefined) {
-        mousex = e.touches[0].clientX
-        mousey = e.touches[0].clientY
-    } else {
-        mousex = undefined
-        mousey = undefined
-    }
+    mousex = e.touches[0].clientX;
+    mousey = e.touches[0].clientY;
 })
 
 canvas.addEventListener("mousemove", function(e) {
