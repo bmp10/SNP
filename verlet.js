@@ -202,14 +202,14 @@ canvas.addEventListener("mousedown", function(e) {
     mousedown(e);
 })
 canvas.addEventListener("touchstart", function(e) {
-    mousedown(new MouseEvent({clientX: e.touches[0].clientX, clientY: e.touches[0].clientY}));
+    mouseupdate(new MouseEvent({clientX: e.touches[0].pageX, clientY: e.touches[0].pageY}));
 })
 
 canvas.addEventListener("mousemove", function(e) {
     mouseupdate(e);
 })
 canvas.addEventListener("touchmove", function(e) {
-    mouseupdate(new MouseEvent({clientX: e.touches[0].clientX, clientY: e.touches[0].clientY}));
+    mouseupdate(new MouseEvent({clientX: e.touches[0].pageX, clientY: e.touches[0].pageY}));
 })
 
 canvas.addEventListener("mouseup", function(e) {
