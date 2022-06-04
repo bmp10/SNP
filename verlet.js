@@ -166,7 +166,6 @@ function update() {
     count ++;
 
     now = Date.now();
-    //console.log(Math.round(1000/(now - start)));
 
     if (mousex != undefined) {
         substepmouse(mousex, mousey);
@@ -189,8 +188,6 @@ function mousedown(e) {
     e.preventDefault();
     mousex = e.clientX - canvas.offsetLeft;
     mousey = e.clientY - canvas.offsetTop;
-
-    console.log(e)
 }
 function mouseupdate(e) {
     e.preventDefault();
