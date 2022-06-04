@@ -222,9 +222,8 @@ canvas.addEventListener("touchend", function(e) {
 })
 
 
-document.onscroll = function(e){
-    e.preventDefault();
-    e.stopPropagation();
+window.onscroll = function() {
+    window.scroll(0, 0);
 }
 
 
