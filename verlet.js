@@ -189,6 +189,8 @@ function mousedown(e) {
     e.preventDefault();
     mousex = e.clientX - canvas.offsetLeft;
     mousey = e.clientY - canvas.offsetTop;
+
+    console.log(e)
 }
 function mouseupdate(e) {
     e.preventDefault();
@@ -202,14 +204,14 @@ canvas.addEventListener("mousedown", function(e) {
     mousedown(e);
 })
 canvas.addEventListener("touchstart", function(e) {
-    mousedown(new MouseEvent({clientX: e.touches[0].pageX, clientY: e.touches[0].pageY}));
+    mousedown(new MouseEvent("mousedown", {clientX: e.touches[0].clientX, clientY: e.touches[0].clientY}));
 })
 
 canvas.addEventListener("mousemove", function(e) {
     mouseupdate(e);
 })
 canvas.addEventListener("touchmove", function(e) {
-    mouseupdate(new MouseEvent({clientX: e.touches[0].pageX, clientY: e.touches[0].pageY}));
+    mouseupdate(new MouseEvent("mousemove", {clientX: e.touches[0].clientX, clientY: e.touches[0].clientY}));
 })
 
 canvas.addEventListener("mouseup", function(e) {
