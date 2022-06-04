@@ -222,8 +222,9 @@ canvas.addEventListener("touchend", function(e) {
 })
 
 
-document.ontouchmove = function(e){
+document.onscroll = function(e){
     e.preventDefault();
+    e.stopPropagation();
 }
 
 
