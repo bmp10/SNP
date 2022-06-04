@@ -185,27 +185,45 @@ function update() {
     start = now;
 }
 
-canvas.addEventListener("mousedown touchstart", function(e) {
+function mousedown(e) {
     mousex = e.clientX - canvas.offsetLeft;
     mousey = e.clientY - canvas.offsetTop;
-})
-
-canvas.addEventListener("mousemove touchmove", function(e) {
+}
+function mouseupdate(e) {
     if (mousex != undefined) {
         mousex = e.clientX - canvas.offsetLeft;
         mousey = e.clientY - canvas.offsetTop;
     }
+}
+
+canvas.addEventListener("mousedown", function(e) {
+    mousedown(e);
+})
+canvas.addEventListener("touchstart", function(e) {
+    mousedown(e);
 })
 
-canvas.addEventListener("mouseup touchend", function(e) {
+canvas.addEventListener("mousemove", function(e) {
+    mouseupdate(e);
+})
+canvas.addEventListener("touchmove", function(e) {
+    mouseupdate(e);
+})
+
+canvas.addEventListener("mouseup", function(e) {
     mousex = undefined;
     mousey = undefined;
 })
 
-/*
+canvas.addEventListener("touchend", function(e) {
+    mousex = undefined;
+    mousey = undefined;
+})
+
+
 document.body.addEventListener("touchstart touchmove touchend", function(e) {
     e.preventDefault();
 })
-*/
+
 
 setInterval(update, 10);
