@@ -186,10 +186,12 @@ function update() {
 }
 
 function mousedown(e) {
+    e.preventDefault();
     mousex = e.clientX - canvas.offsetLeft;
     mousey = e.clientY - canvas.offsetTop;
 }
 function mouseupdate(e) {
+    e.preventDefault();
     if (mousex != undefined) {
         mousex = e.clientX - canvas.offsetLeft;
         mousey = e.clientY - canvas.offsetTop;
@@ -221,9 +223,9 @@ canvas.addEventListener("touchend", function(e) {
 })
 
 
-document.body.addEventListener("touchstart touchmove touchend", function(e) {
+document.ontouchmove = function(e){
     e.preventDefault();
-})
+}
 
 
 setInterval(update, 10);
