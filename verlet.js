@@ -137,7 +137,7 @@ var now;
 var count = 0;
 const interval = 1;
 const max = 1500;
-const substeps = 2;
+var substeps = 2;
 const cursorradius = 50;
 
 function substep() {
@@ -185,12 +185,18 @@ function update() {
 }
 
 function mousedown(e) {
-    e.preventDefault();
-    mousex = e.clientX - canvas.offsetLeft;
-    mousey = e.clientY - canvas.offsetTop;
+    if (e.button == 0) {
+        mousex = e.clientX - canvas.offsetLeft;
+        mousey = e.clientY - canvas.offsetTop;
+    }
+    if (e.button == 1) {
+        substeps += 1
+        if (substeps == 9) {
+            substeps = 1
+        }
+    }
 }
 function mouseupdate(e) {
-    e.preventDefault();
     if (mousex != undefined) {
         mousex = e.clientX - canvas.offsetLeft;
         mousey = e.clientY - canvas.offsetTop;
