@@ -202,4 +202,8 @@ canvas.addEventListener("mouseup touchend", function(e) {
     mousey = undefined;
 })
 
+document.body.addEventListener("touchstart touchmove touchend", function(e) {
+    e.preventDefault();
+})
+
 setInterval(update, 10);
