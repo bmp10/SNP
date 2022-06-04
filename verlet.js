@@ -45,7 +45,7 @@ class Circle {
     }
 }
 
-let circles = [];//[new Circle(500, 500, 30)];
+let circles = [new Circle(500, 500, 30)];
 
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
