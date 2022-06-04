@@ -135,7 +135,7 @@ var start = Date.now();
 var now;
 
 var count = 0;
-const interval = 10;
+const interval = 1;
 const max = 1500;
 const substeps = 2;
 const cursorradius = 50;
