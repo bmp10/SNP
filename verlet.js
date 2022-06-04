@@ -197,7 +197,7 @@ canvas.addEventListener("mousemove touchend", function(e) {
     }
 })
 
-canvas.addEventListener("mouseup", function(e) {
+canvas.addEventListener("mouseup touchmove", function(e) {
     mousex = undefined;
     mousey = undefined;
 })
